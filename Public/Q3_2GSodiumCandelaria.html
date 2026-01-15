@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Application Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Stylesheets/q3-2g.css">
+    <link rel="icon" href="../Images/pochita1.png">
+</head>
+<body>
+    <h1>Q3 | CANDELARIA, Ruisse Oebree | Sodium 09 | 15 Jan 2026</h1>
+
+    <form 
+        action="submit" 
+        method="post"
+        onsubmit="return confirm('Are you sure you want to submit this application?');"
+        onreset="return confirm('Are you sure you want to reset the form? All data will be lost.');"
+    >
+        <!-- F1: Basic Info -->
+        <fieldset>
+            <legend>Personal Information</legend>
+            <label> Student ID:
+                <input type="number" name="studentID" required onblur="validateEmpty(this)">
+            </label>
+            <label> Full Name:
+                <input type="text" name="fullName" required onblur="validateEmpty(this)">
+            </label>
+            <label> Birthday:
+                <input type="date" name="birthday" required onblur="validateEmpty(this)">
+            </label>
+            <label> Email Address:
+                <input type="email" name="email" required onblur="validateEmpty(this)">
+            </label>
+        </fieldset>
+
+        <!-- F2: Additional Info -->
+        <fieldset>
+            <legend>Additional Details</legend>
+            <label> Mobile Phone:
+                <input type="text" name="mobile" required onblur="validateEmpty(this)">
+            </label>
+            <label> Grade Level:
+                <select name="gradeLevel" required onblur="validateEmpty(this)">
+                    <option value="">-- Select --</option>
+                    <option value="7">Grade 7</option>
+                    <option value="8">Grade 8</option>
+                    <option value="9">Grade 9</option>
+                    <option value="10">Grade 10</option>
+                    <option value="11">Grade 11</option>
+                    <option value="12">Grade 12</option>
+                </select>
+            </label>
+            <label>Intern / Extern:</label>
+                <div class="toggle-group">
+                    <input type="radio" id="intern" name="internExtern" value="intern" required>
+                    <label for="intern" class="toggle-option">Intern</label>
+
+                    <input type="radio" id="extern" name="internExtern" value="extern" required>
+                    <label for="extern" class="toggle-option">Extern</label>
+                </div>
+            <label> Preferred Organization / Club:
+                <select name="club" required onblur="validateEmpty(this)">
+                    <option value="">-- Select a Club --</option>
+                    <option value="volant">Volant</option>
+                    <option value="himig">Himig Agham</option>
+                    <option value="bake">Bake Club</option>
+                    <option value="astrosoc">Astrosoc</option>
+                    <option value="math">Math Club</option>
+                    <option value="debate">Debate Society</option>
+                </select>
+            </label>
+            <label>
+                Why do you want to join?
+                <textarea name="reason" rows="4" required onblur="validateEmpty(this)"></textarea>
+            </label>
+        </fieldset>
+
+        <div class="buttons">
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </div>
+    </form>
+
+    <script>
+        function validateEmpty(element) {
+            if (!element.value.trim()) {
+                element.classList.add('invalid');
+            } else {
+                element.classList.remove('invalid');
+            }
+        }
+
+        document.querySelectorAll('input, select, textarea').forEach(el => {
+            el.addEventListener('input', () => {
+                if (el.value.trim()) {
+                    el.classList.remove('invalid');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
