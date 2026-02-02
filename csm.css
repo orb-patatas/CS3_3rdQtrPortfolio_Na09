@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
 * {
     margin: 0;
     padding: 0;
@@ -7,544 +5,224 @@
 }
 
 :root {
-    --dark-bg: #120808;
-    --darker-bg: #0a0404;
-    --sidebar-bg: #1a0a0a;
-    --card-bg: #230e0e;
-    --primary-red: #c1121f;
-    --accent-red: #e63946;
-    --light-red: #ff6b6b;
-    --text-primary: #ffffff;
-    --text-secondary: #b3b3b3;
-    --text-tertiary: #7a7a7a;
-    --border-color: #3a1414;
-    --success-color: #4ade80;
+    --dark-red: #1a0a0a;
+    --darker-red: #0f0505;
+    --medium-red: #2c0f0f;
+    --accent-red: #c1121f;
+    --light-red: #e63946;
+    --cream-white: #fff9f9;
+    --light-cream: #f8f0e9;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    background: linear-gradient(135deg, var(--dark-bg), var(--darker-bg));
-    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, var(--dark-red), var(--darker-red));
+    color: var(--cream-white);
+    line-height: 1.6;
     min-height: 100vh;
-    overflow-x: hidden;
+    padding: 40px 20px;
 }
 
-.app-container {
-    display: flex;
-    min-height: 100vh;
+.container {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.sidebar {
-    width: 240px;
-    background: var(--sidebar-bg);
-    border-right: 1px solid var(--border-color);
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    height: 100vh;
-    overflow-y: auto;
+header {
+    text-align: center;
+    margin-bottom: 60px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(230, 57, 70, 0.3);
 }
 
-.sidebar-header {
-    padding: 24px 20px 16px;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 8px 12px;
-    border-radius: 8px;
-    transition: background 0.2s;
-}
-
-.logo:hover {
-    background: rgba(193, 18, 31, 0.1);
-}
-
-.logo-icon {
-    font-size: 1.5rem;
-}
-
-.logo-text {
-    font-weight: 700;
-    font-size: 1.25rem;
-    letter-spacing: -0.5px;
-}
-
-.nav-menu {
-    padding: 20px 0;
-    flex: 1;
-}
-
-.nav-section {
-    margin-bottom: 24px;
-}
-
-.nav-title {
-    padding: 8px 24px 12px;
-    font-size: 0.875rem;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--text-tertiary);
-}
-
-.nav-list {
-    list-style: none;
-}
-
-.nav-item {
-    padding: 10px 24px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    font-weight: 500;
-    font-size: 0.95rem;
-    color: var(--text-secondary);
-    cursor: pointer;
-    transition: all 0.2s;
-    border-left: 3px solid transparent;
-}
-
-.nav-item:hover {
-    background: rgba(193, 18, 31, 0.1);
-    color: var(--text-primary);
-    border-left: 3px solid var(--accent-red);
-}
-
-.nav-item.active {
-    background: rgba(193, 18, 31, 0.15);
-    color: var(--text-primary);
-    border-left: 3px solid var(--accent-red);
-}
-
-.nav-icon {
-    font-size: 1.1rem;
-}
-
-.profile-section {
-    padding: 16px 20px;
-    border-top: 1px solid var(--border-color);
-    margin-top: auto;
-}
-
-.profile-info {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.profile-name {
-    font-weight: 600;
-    font-size: 0.95rem;
-    color: var(--text-primary);
-}
-
-.profile-meta {
-    font-size: 0.8rem;
-    color: var(--text-tertiary);
-}
-
-.main-content {
-    flex: 1;
-    margin-left: 240px;
-    padding: 32px;
-}
-
-.content-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 32px;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.header-title {
-    flex: 1;
-    min-width: 300px;
-}
-
-.content-header h1 {
+header h1 {
     font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 8px;
-    background: linear-gradient(90deg, var(--text-primary), var(--accent-red));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.header-subtitle {
-    font-size: 1rem;
-    color: var(--text-secondary);
-    font-weight: 400;
-}
-
-.play-all-btn {
-    background: linear-gradient(90deg, var(--primary-red), var(--accent-red));
-    color: white;
-    border: none;
-    padding: 16px 32px;
-    border-radius: 30px;
-    font-family: 'Inter', sans-serif;
     font-weight: 600;
-    font-size: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-    transition: all 0.3s;
-    box-shadow: 0 4px 15px rgba(193, 18, 31, 0.4);
-    min-width: 140px;
-    justify-content: center;
-}
-
-.play-all-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(193, 18, 31, 0.6);
-    background: linear-gradient(90deg, var(--accent-red), #ff5252);
-}
-
-.play-all-btn:active {
-    transform: translateY(0);
-}
-
-.play-icon {
-    font-size: 1.1rem;
-    font-weight: bold;
-}
-
-.playlist-container {
-    background: var(--card-bg);
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
-    border: 1px solid var(--border-color);
-}
-
-.playlist-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.table-header {
-    background: rgba(0, 0, 0, 0.3);
-    position: sticky;
-    top: 0;
-    z-index: 10;
-}
-
-.table-header th {
-    text-align: left;
-    padding: 16px 20px;
-    font-weight: 600;
-    font-size: 0.875rem;
     letter-spacing: 1px;
-    text-transform: uppercase;
-    color: var(--text-tertiary);
-    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 10px;
 }
 
-.col-track {
-    width: 60px;
-    padding-left: 24px;
+.subtitle {
+    font-size: 1.1rem;
+    color: var(--light-cream);
+    opacity: 0.8;
 }
 
-.col-title {
-    min-width: 300px;
+main h2 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    color: var(--light-red);
 }
 
-.col-category {
-    min-width: 150px;
+.project-list {
+    list-style: none;
+    display: grid;
+    gap: 15px;
 }
 
-.col-date {
-    min-width: 100px;
+.project-item {
+    background: rgba(35, 12, 12, 0.7);
+    border-radius: 8px;
+    padding: 20px 25px;
+    transition: all 0.3s ease;
+    border-left: 3px solid var(--accent-red);
+    position: relative;
+    overflow: hidden;
 }
 
-.col-duration {
-    min-width: 100px;
+.project-item:hover {
+    transform: translateX(10px);
+    background: rgba(45, 15, 15, 0.8);
+    border-left: 4px solid var(--light-red);
 }
 
-.playlist-row {
-    transition: all 0.2s;
-    cursor: pointer;
-}
-
-.playlist-row:hover {
-    background: rgba(193, 18, 31, 0.1);
-}
-
-.playlist-row.featured {
+.project-item.featured {
     background: rgba(193, 18, 31, 0.15);
-    border-left: 4px solid var(--accent-red);
+    border-left: 4px solid var(--light-red);
 }
 
-.playlist-row.featured:hover {
+.project-item.featured:hover {
     background: rgba(193, 18, 31, 0.2);
 }
 
-.playlist-row td {
-    padding: 16px 20px;
-    border-bottom: 1px solid var(--border-color);
-    font-size: 0.95rem;
-}
-
-.cell-track {
+.project-link {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 12px;
-    position: relative;
-    padding-left: 24px;
+    text-decoration: none;
+    color: var(--cream-white);
+    width: 100%;
+    height: 100%;
 }
 
-.track-number {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    background: var(--card-bg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    font-weight: 500;
-    transition: all 0.2s;
-}
-
-.track-number.featured-track {
-    background: linear-gradient(135deg, var(--primary-red), var(--accent-red));
-    color: white;
-    width: 28px;
-    height: 28px;
-    font-weight: 600;
-}
-
-.play-btn {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background: var(--primary-red);
-    color: white;
-    border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.8rem;
-    font-weight: bold;
-    cursor: pointer;
-    opacity: 0;
-    transition: all 0.3s;
-    flex-shrink: 0;
-}
-
-.cell-track:hover .play-btn {
-    opacity: 1;
-    transform: scale(1);
-}
-
-.play-btn:hover {
-    background: var(--accent-red);
-    transform: scale(1.1);
-    box-shadow: 0 4px 12px rgba(193, 18, 31, 0.5);
-}
-
-.play-btn.featured-play {
-    opacity: 1;
-    background: linear-gradient(135deg, var(--primary-red), var(--accent-red));
-    box-shadow: 0 0 15px rgba(230, 57, 70, 0.6);
-}
-
-.cell-title {
-    font-weight: 500;
-}
-
-.title-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.song-title {
-    color: var(--text-primary);
-    font-weight: 600;
-    font-size: 1rem;
-}
-
-.song-artist {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    font-weight: 400;
-}
-
-.cell-category, .cell-date {
-    color: var(--text-secondary);
-}
-
-.cell-duration {
-    color: var(--success-color);
-    font-weight: 500;
-}
-
-.cell-duration.featured-status {
+.project-number {
+    font-size: 1.1rem;
     color: var(--accent-red);
-    background: rgba(230, 57, 70, 0.15);
+    font-weight: 600;
+    min-width: 40px;
+}
+
+.project-name {
+    font-size: 1.2rem;
+    font-weight: 500;
+    flex: 1;
+    text-align: left;
+    padding: 0 15px;
+}
+
+.project-status {
+    font-size: 0.85rem;
     padding: 4px 12px;
     border-radius: 15px;
-    display: inline-block;
-    font-size: 0.85rem;
+    font-weight: 600;
     letter-spacing: 0.5px;
 }
 
-@keyframes pulse {
-    0%, 100% {
-        box-shadow: 0 0 0 rgba(230, 57, 70, 0);
-    }
-    50% {
-        box-shadow: 0 0 15px rgba(230, 57, 70, 0.8);
-    }
+.project-item.featured .project-status {
+    background: rgba(230, 57, 70, 0.15);
+    color: var(--light-red);
+    border: 1px solid var(--light-red);
 }
 
-@media (max-width: 1024px) {
-    .sidebar {
-        width: 200px;
-    }
-    
-    .main-content {
-        margin-left: 200px;
-    }
-    
-    .logo-text {
-        font-size: 1.1rem;
-    }
-    
-    .content-header h1 {
-        font-size: 2.2rem;
-    }
+.project-status {
+    background: rgba(74, 185, 128, 0.15);
+    color: #4ade80;
+    border: 1px solid #4ade80;
+}
+
+footer {
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(230, 57, 70, 0.3);
+    text-align: center;
+}
+
+footer p {
+    font-size: 0.95rem;
+    color: var(--light-cream);
+    opacity: 0.7;
+    letter-spacing: 1px;
 }
 
 @media (max-width: 768px) {
-    .app-container {
-        flex-direction: column;
+    .container {
+        padding: 0 20px;
     }
     
-    .sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
-        border-right: none;
-        border-bottom: 1px solid var(--border-color);
+    header h1 {
+        font-size: 2rem;
     }
     
-    .main-content {
-        margin-left: 0;
-        padding: 24px;
+    main h2 {
+        font-size: 1.6rem;
     }
     
-    .content-header {
-        flex-direction: column;
-        align-items: stretch;
+    .project-number {
+        font-size: 1rem;
+        min-width: 35px;
     }
     
-    .play-all-btn {
-        width: 100%;
-        justify-content: center;
+    .project-name {
+        font-size: 1.1rem;
+        padding: 0 10px;
     }
     
-    .col-title {
-        min-width: 200px;
-    }
-    
-    .col-category, .col-date, .col-duration {
-        display: none;
-    }
-    
-    .cell-track {
-        width: 50px;
-        padding-left: 16px;
-    }
-    
-    .track-number {
-        width: 22px;
-        height: 22px;
+    .project-status {
         font-size: 0.8rem;
-    }
-    
-    .track-number.featured-track {
-        width: 26px;
-        height: 26px;
-    }
-    
-    .play-btn {
-        width: 28px;
-        height: 28px;
-        font-size: 0.75rem;
-    }
-    
-    .song-title {
-        font-size: 0.95rem;
-    }
-    
-    .song-artist {
-        font-size: 0.8rem;
+        padding: 3px 10px;
     }
 }
 
 @media (max-width: 480px) {
-    .sidebar {
-        padding: 0 10px;
+    body {
+        padding: 20px 10px;
     }
     
-    .nav-title {
-        padding: 8px 16px 12px;
-        font-size: 0.8rem;
+    header {
+        margin-bottom: 40px;
+        padding-bottom: 20px;
     }
     
-    .nav-item {
-        padding: 8px 16px;
-        font-size: 0.9rem;
-    }
-    
-    .logo {
-        padding: 6px 10px;
-    }
-    
-    .logo-text {
-        font-size: 1rem;
-    }
-    
-    .main-content {
-        padding: 16px;
-    }
-    
-    .content-header h1 {
+    header h1 {
         font-size: 1.8rem;
     }
     
-    .header-subtitle {
-        font-size: 0.9rem;
+    .subtitle {
+        font-size: 1rem;
     }
     
-    .playlist-row td {
-        padding: 14px 16px;
+    main h2 {
+        font-size: 1.4rem;
+        margin-bottom: 25px;
     }
     
-    .cell-track {
-        padding-left: 12px;
+    .project-item {
+        padding: 15px 20px;
     }
     
-    .song-title {
-        font-size: 0.9rem;
+    .project-number {
+        font-size: 0.95rem;
+        min-width: 30px;
     }
     
-    .profile-name {
-        font-size: 0.9rem;
+    .project-name {
+        font-size: 1rem;
+        padding: 0 8px;
     }
     
-    .profile-meta {
+    .project-status {
         font-size: 0.75rem;
+        padding: 2px 8px;
+    }
+    
+    footer {
+        margin-top: 40px;
+        padding-top: 20px;
+    }
+    
+    footer p {
+        font-size: 0.9rem;
     }
 }

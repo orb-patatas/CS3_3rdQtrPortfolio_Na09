@@ -3,123 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Q3 Playlist sa CS</title>
-    <link rel="stylesheet" href="csm.css" type="text/css">
+    <title>Q3 Projects</title>
+    <link rel="stylesheet" href="csm.css">
 </head>
 <body>
-    <div class="app-container">
-        <aside class="sidebar">
-            <div class="sidebar-header">
-                <div class="logo">
-                    <span class="logo-icon">🎵</span>
-                    <span class="logo-text">My Projects</span>
-                </div>
-            </div>
-            
-            <nav class="nav-menu">
-                <div class="nav-section">
-                    <div class="nav-title">LIBRARY</div>
-                    <ul class="nav-list">
-                        <li class="nav-item active">
-                            <span class="nav-icon">🎧</span>
-                            <span class="nav-text">Projects</span>
-                        </li>
-                        <li class="nav-item">
-                            <span class="nav-icon">⭐</span>
-                            <span class="nav-text">Featured</span>
-                        </li>
-                        <li class="nav-item">
-                            <span class="nav-icon">📁</span>
-                            <span class="nav-text">Categories</span>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-            
-            <div class="profile-section">
-                <div class="profile-info">
-                    <div class="profile-name">Ruisse Oebree Candelaria</div>
-                    <div class="profile-meta">Web Developer</div>
-                </div>
-            </div>
-        </aside>
+    <div class="container">
+        <header>
+            <h1>Ruisse Oebree Candelaria</h1>
+            <p class="subtitle">Web Developer</p>
+        </header>
 
-        <main class="main-content">
-            <div class="content-header">
-                <div class="header-title">
-                    <h1>pov: coding ng gabi</h1>
-                    <p class="header-subtitle">8 projects • le-ns</p>
-                </div>
-                <button class="play-all-btn">
-                    <span class="play-icon">▶</span>
-                    Play All
-                </button>
-            </div>
-
-            <div class="playlist-container">
-                <table class="playlist-table">
-                    <thead>
-                        <tr class="table-header">
-                            <th class="col-track">#</th>
-                            <th class="col-title">Title</th>
-                            <th class="col-category">Category</th>
-                            <th class="col-date">Created</th>
-                            <th class="col-duration">Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="playlist-row featured" data-link="#">
-                            <td class="cell-track">
-                                <div class="track-number featured-track">1</div>
-                                <button class="play-btn featured-play" onclick="window.location.href='/public/SignupPage.html'">▶</button>                            </td>
-                            <td class="cell-title">
-                                <div class="title-wrapper">
-                                    <div class="song-title">Club Sign-Ups Application</div>
-                                    <div class="song-artist">arciii</div>
-                                </div>
-                            </td>
-                            <td class="cell-category">Web Development</td>
-                            <td class="cell-date">Jan 2026</td>
-                            <td class="cell-duration featured-status">Featured</td>
-                        </tr>
-                        
-                        <tr class="playlist-row" data-link="/public/SignupPage.html">
-                            <td class="cell-track">
-                                <div class="track-number">2</div>
-                                <button class="play-btn featured-play" onclick="window.location.href='/public/SignupPage.html'">▶</button>                            </td>
-                            </td>
-                            <td class="cell-title">
-                                <div class="title-wrapper">
-                                    <div class="song-title">To be Released</div>
-                                    <div class="song-artist">arciii</div>
-                                </div>
-                            </td>
-                            <td class="cell-category">--------</td>
-                            <td class="cell-date">???</td>
-                            <td class="cell-duration">TBR</td>
-                        </tr>
-                        
-                        <tr class="playlist-row" data-link="#">
-                            <td class="cell-track">
-                                <div class="track-number">3</div>
-                                <button class="play-btn" onclick="alert('This project is coming soon!')">▶</button>
-                            </td>
-                            <td class="cell-title">
-                                <div class="title-wrapper">
-                                    <div class="song-title">To Be Released</div>
-                                    <div class="song-artist">Secret</div>
-                                </div>
-                            </td>
-                            <td class="cell-category">--------</td>
-                            <td class="cell-date">???</td>
-                            <td class="cell-duration">TBR</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+        <main>
+            <h2>Projects</h2>
+            <ul class="project-list">
+                <li class="project-item featured">
+                    <a href="./public/SignupPage.html" class="project-link">
+                        <span class="project-number">01</span>
+                        <span class="project-name">Club Sign-Ups Application</span>
+                        <span class="project-status">Featured</span>
+                    </a>
+                </li>
+                <li class="project-item">
+                    <a href="#" class="project-link">
+                        <span class="project-number">02</span>
+                        <span class="project-name">Project 2</span>
+                        <span class="project-status">Coming Soon</span>
+                    </a>
+                </li>
+                <li class="project-item">
+                    <a href="#" class="project-link">
+                        <span class="project-number">03</span>
+                        <span class="project-name">Project 3</span>
+                        <span class="project-status">Coming Soon</span>
+                    </a>
+                </li>
+                <li class="project-item">
+                    <a href="#" class="project-link">
+                        <span class="project-number">04</span>
+                        <span class="project-name">Project 4</span>
+                        <span class="project-status">Coming Soon</span>
+                    </a>
+                </li>
+                <li class="project-item">
+                    <a href="#" class="project-link">
+                        <span class="project-number">05</span>
+                        <span class="project-name">Project 5</span>
+                        <span class="project-status">Coming Soon</span>
+                    </a>
+                </li>
+            </ul>
         </main>
 
-        <script src="/Javascript/index.js"></script>
+        <footer>
+            <p>Sodium 09 | 2026</p>
+        </footer>
+    </div>
 
+    <script>
+        document.querySelectorAll('.project-link').forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.parentElement.style.transform = 'translateX(10px)';
+            });
+            
+            link.addEventListener('mouseleave', function() {
+                this.parentElement.style.transform = 'translateX(0)';
+            });
+        });
+    </script>
 </body>
 </html>
